@@ -1,8 +1,6 @@
 import app from './app';
 import mongoose from 'mongoose';
-
-const PORT = 3000;
-const mongoURI = 'mongodb://localhost/virtua-overflow';
+import { port, mongoURI } from './config';
 
 const start = async () => {
   try {
@@ -12,8 +10,8 @@ const start = async () => {
     });
     console.log('Connected to database');
 
-    await app.listen(PORT);
-    console.log(`Listening on port ${PORT}`);
+    await app.listen(port);
+    console.log(`Listening on port ${port}`);
   } catch (err) {
     console.log(err);
   }
