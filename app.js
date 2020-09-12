@@ -1,5 +1,6 @@
 import express from 'express';
 import apiRouter from './api';
+import allowEveryOrigin from './middlewares/allow-every-origin';
 
 const app = express();
 
@@ -7,6 +8,7 @@ const app = express();
 
 // Middlewares
 app.use(express.json());
+app.use(allowEveryOrigin);
 
 // Routes
 app.use('/api', apiRouter);

@@ -1,23 +1,52 @@
 {
-  "name": "mern",
-  "version": "1.0.0",
-  "description": "A stack overflow clone",
-  "main": "index.js",
-  "scripts": {
-    "start": "nodemon index.js --exec babel-node"
-  },
-  "author": "Ernesto Garcia <ernestognw@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/node": "^7.10.5",
-    "@babel/preset-env": "^7.11.5",
-    "bcryptjs": "^2.4.3",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.10.4",
-    "mongoose-unique-validator": "^2.0.3",
-    "nodemon": "^2.0.4"
-  }
+    "name": "mern",
+    "version": "1.0.0",
+    "description": "A stack overflow clone",
+    "main": "index.js",
+    "scripts": {
+        "start": "concurrently -r \"npm run start:server\" \"npm run start:client\"",
+        "start:server": "nodemon index.js --exec babel-node",
+        "start:client": "react-scripts start",
+        "build:client": "react-scripts build"
+    },
+    "author": "Ernesto Garcia <ernestognw@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "@babel/core": "^7.11.6",
+        "@babel/node": "^7.10.5",
+        "@babel/preset-env": "^7.11.5",
+        "axios": "^0.20.0",
+        "bcryptjs": "^2.4.3",
+        "bootstrap": "^4.5.2",
+        "concurrently": "^5.3.0",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.10.4",
+        "mongoose-unique-validator": "^2.0.3",
+        "nodemon": "^2.0.4",
+        "react": "^16.13.1",
+        "react-bootstrap": "^1.3.0",
+        "react-dom": "^16.13.1",
+        "react-icons": "^3.11.0",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "^3.4.3"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "nodemonConfig": {
+      "ignore": [
+        "src/*"
+      ]
+    }
 }
