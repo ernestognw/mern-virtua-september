@@ -12,5 +12,7 @@ app.use(allowEveryOrigin);
 
 // Routes
 app.use('/api', apiRouter);
+app.use('/static/*', express.static('build/static'));
+app.use('*', express.static('build'));
 
 export default app;

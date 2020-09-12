@@ -1,6 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Navbar, Nav, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+
+const StyledButton = styled(Button)`
+  background: red;
+  text-transform: uppercase;
+
+  &:hover {
+    background: blue;
+  }
+`;
 
 const CustomNavbar = ({ isLogged, setIsLogged }) => {
   const logout = () => {
@@ -9,7 +19,7 @@ const CustomNavbar = ({ isLogged, setIsLogged }) => {
   };
 
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar style={{}} bg="dark" variant="dark">
       <Navbar.Brand>Navbar</Navbar.Brand>
       <Nav className="mr-auto">
         <Link to="/questions">
@@ -17,12 +27,12 @@ const CustomNavbar = ({ isLogged, setIsLogged }) => {
         </Link>
       </Nav>
       {isLogged ? (
-        <Button onClick={logout} variant="outline-info">
+        <StyledButton onClick={logout} variant="outline-info">
           Salir
-        </Button>
+        </StyledButton>
       ) : (
         <Link to="/login">
-          <Button variant="outline-info">Login</Button>
+          <StyledButton variant="outline-info">Login</StyledButton>
         </Link>
       )}
     </Navbar>
